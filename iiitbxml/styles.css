@@ -1,0 +1,8 @@
+.que.iiitbsql .answer {
+    padding: 0.3em;
+    width: auto;
+    display: inline;
+}
+.que.iiitbsql .answer input {
+    width: 80%;
+}
