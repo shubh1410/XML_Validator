@@ -10,3 +10,6 @@ qtype_renderer -                                                  renderer.php
 
 
 qtype_renderer : create display for questions
+
+
+$pluginmanager->move_plugin('file', 'down');      from db/install.php
