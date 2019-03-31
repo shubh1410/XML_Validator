@@ -16,40 +16,28 @@ class evaluation {
 
     public function evaluate_response($response, $answer, $dbname) {
 
-
-        $db_hostname = get_string('db_hostname', 'qtype_iiitbsql');
-        $db_database = $dbname;
-        $db_username = get_string('db_username', 'qtype_iiitbsql');
-        $db_password = get_string('db_password', 'qtype_iiitbsql');
-        
         try{
-        $con = new PDO("mysql:host=$db_hostname;dbname=$db_database", $db_username, $db_password);
-        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query1 = rtrim($response,';');
-        $query2 = rtrim($answer,';');
-        $sth = $con->query($query1);
-        $row = $sth->fetchAll();
-        $sth2 = $con->query($query2);
-        $row2 = $sth2->fetchAll();
-        
-        $n = new checkQuery();
-        
-        $irow = $n->my_func(',', $row);
-        $irow2 = $n->my_func(',', $row2);
 
-        if ($irow == $irow2) {
+		$sxe = simplexml_load_string($response);
+		if (!$sxe) {
+		 return 0;
+		}
+		$dom_sxe = dom_import_simplexml($sxe);
+		$dom = new DOMDocument('1.0');
+		$dom_sxe = $dom->importNode($dom_sxe, true);
+		$dom_sxe = $dom->appendChild($dom_sxe);
+		$dom->saveXML();
 
-            return 1;
-        } else {
-            return 0;
-        }
-        }  catch (Exception $e){
-            
-            return 0;
-        }
-    }
-    
- 
+		$schema = $answer;
+
+		if ($dom->schemaValidateSource($schema)) {
+		   return 1;
+		} else {
+		   return 0;
+		}
+	}catch(Exception $e){
+		    	return 0;
+		    }
+	}
 }
-
 ?>
