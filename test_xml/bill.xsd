@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:target="http://www.iiitb.ac.in/bills"
+  targetNamespace="http://www.iiitb.ac.in/bills"
+  elementFormDefault="qualified">
+  <element name="bills">
+    <complexType>
+      <sequence>
+        <element name="bill" minOccurs="1" maxOccurs="unbounded">
+          <complexType>
+            <sequence>
+              <element name="amount">
+                <simpleType>
+                  <restriction base="decimal">
+                    <fractionDigits value="2"/>
+                  </restriction>
+                </simpleType>
+              </element>
+              <element name="bill_item" minOccurs="1" maxOccurs="unbounded">
+                <complexType>
+                  <sequence>
+                    <element name="item_name">
+                      <simpleType>
+                        <restriction base="string">
+                          <maxLength value="20"/>
+                        </restriction>
+                      </simpleType>
+                    </element>
+                    <element name="item_category">
+                      <simpleType>
+                        <restriction base="string">
+                          <enumeration value="A"/>
+                          <enumeration value="B"/>
+                          <enumeration value="C"/>
+                          <enumeration value="D"/>
+                        </restriction>
+                      </simpleType>
+                    </element>
+                    <element name="quantity">
+                      <simpleType>
+                        <restriction base="integer">
+                          <minInclusive value="1"/>
+                          <maxInclusive value="99"/>
+                        </restriction>
+                      </simpleType>
+                    </element>
+                    <element name="discount" minOccurs="0">
+                      <simpleType>
+                        <restriction base="decimal">
+                          <minInclusive value="1"/>
+                          <maxInclusive value="100"/>
+                        </restriction>
+                      </simpleType>
+                    </element>
+                  </sequence>
+                  <attribute name="code">
+                    <simpleType>
+                      <restriction base="string">
+                        <pattern value="([a-zA-z0-9])+"/>
+                        <minLength value="6"/>
+                        <maxLength value="6"/>
+                      </restriction>
+                    </simpleType>
+                  </attribute>
+                </complexType>
+              </element>
+            </sequence>
+            <attribute name="id" type="decimal"/>
+    </complexType>
+  </element>
+</sequence>
+</complexType>
+</element>
+</schema>

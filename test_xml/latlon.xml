@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<location xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.iiitb.ac.in/it708/prof" xsi:schemaLocation="http://www.iiitb.ac.in/it708/prof latlon.xsd">
+	<uid>location01</uid>
+	<latitude>45.9</latitude>
+	<longitude>34.3</longitude>
+</location>

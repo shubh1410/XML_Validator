@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.iiitb.ac.in/it708/prof" targetNamespace="http://www.iiitb.ac.in/it708/prof" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="location">
+    <xs:complexType>
+      <xs:sequence>
+      <xs:element name="uid" type="xs:ID"/>
+        <xs:element name="latitude" type="xs:float"/>
+        <xs:element name="longitude" type="xs:float"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+
+

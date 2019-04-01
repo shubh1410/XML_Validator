@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<bills xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.iiitb.ac.in/bills bill.xsd"
+  xmlns="http://www.iiitb.ac.in/bills">
+  <bill id="1234">
+    <amount>111</amount>
+    <bill_item code="abc12x">
+      <item_name>jeans</item_name>
+      <item_category>A</item_category>
+      <quantity>4</quantity>
+      <discount>20.2</discount>
+    </bill_item>
+    <bill_item code="a5812x">
+      <item_name>tshirt</item_name>
+      <item_category>B</item_category>
+      <quantity>1</quantity>
+    </bill_item>
+  </bill>
+  <bill id="2321">
+    <amount>198.2</amount>
+    <bill_item code="gfc12x">
+      <item_name>tshirt</item_name>
+      <item_category>D</item_category>
+      <quantity>2</quantity>
+      <discount>3.2</discount>
+    </bill_item>
+    <bill_item code="ga712x">
+      <item_name>hoodie</item_name>
+      <item_category>C</item_category>
+      <quantity>7</quantity>
+      <discount>31.2</discount>
+    </bill_item>
+  </bill>
+</bills>
