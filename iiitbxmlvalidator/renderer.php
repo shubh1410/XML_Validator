@@ -54,7 +54,11 @@ class qtype_iiitbxmlvalidator_renderer extends qtype_renderer {
             $inputattributes['size'] = round(strlen($placeholder) * 1.1);
         }
 
-        $input = html_writer::empty_tag('input', $inputattributes) . $feedbackimg;
+        //$input = html_writer::empty_tag('input', $inputattributes) . $feedbackimg;
+
+
+      $input  = html_writer::tag('div', html_writer::tag('textarea', s($currentanswer),
+                        array('id' => $inputname,'type'=>'text', 'name' => $inputname, 'rows' => 10, 'cols' => 60))) . $feedbackimg;
 
         if ($placeholder) {
             $questiontext = substr_replace($questiontext, $input,

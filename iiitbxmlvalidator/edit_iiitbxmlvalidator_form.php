@@ -29,14 +29,14 @@ class qtype_iiitbxmlvalidator_edit_form extends question_edit_form {
         $mform->addElement('select', 'usecase',
                 get_string('casesensitive', 'qtype_iiitbxmlvalidator'), $menu);
 
-        $mform->addElement('static', 'answersinstruct',
-                get_string('correctanswers', 'qtype_iiitbxmlvalidator'),
-                get_string('filloutoneanswer', 'qtype_iiitbxmlvalidator'));
+        //$mform->addElement('static', 'answersinstruct',
+              //  get_string('correctanswers', 'qtype_iiitbxmlvalidator'),
+              //  get_string('filloutoneanswer', 'qtype_iiitbxmlvalidator'));
 
 
         $mform->closeHeaderBefore('answersinstruct');
 
-        $this->add_per_answer_fields($mform, get_string('answerno', 'qtype_iiitbxmlvalidator', '{no}'),
+        $this->add_per_answer_fields($mform,'XSD_File : ' ,//get_string('answerno', 'qtype_iiitbxmlvalidator', '{no}'),
                 question_bank::fraction_options(),1,1);
 
         $this->add_interactive_settings();

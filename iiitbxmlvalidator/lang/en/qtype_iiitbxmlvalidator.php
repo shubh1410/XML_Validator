@@ -9,7 +9,7 @@
 $string['addmoreanswerblanks'] = 'Blanks for {no} More Answers';
 $string['answer'] = 'Answer: {$a}';
 $string['answermustbegiven'] = 'You must enter an answer if there is a grade or feedback.';
-$string['answerno'] = 'Answer {$a}';
+$string['answerno'] = 'File ';
 $string['caseno'] = 'No, case is unimportant';
 $string['casesensitive'] = 'Case sensitivity';
 $string['caseyes'] = 'Yes, case must match';
