@@ -1,20 +1,20 @@
 <?php
 
 /**
- * iiitbxmlvalidator question definition class.
+ * xmlvalidator question definition class.
  *
  * @package    qtype
- * @subpackage iiitbxmlvalidator
+ * @subpackage xmlvalidator
  */
 
 
 defined('MOODLE_INTERNAL') || die();
-include_once 'evaluation.php';
+include_once 'evaluation_xmlvalidator.php';
 
 /**
- * Represents a iiitbxmlvalidator question.
+ * Represents a xmlvalidator question.
  */
-class qtype_iiitbxmlvalidator_question extends question_graded_by_strategy
+class qtype_xmlvalidator_question extends question_graded_by_strategy
         implements question_response_answer_comparer {
     /** @var boolean whether answers should be graded case-sensitively. */
     public $usecase;
@@ -48,7 +48,7 @@ class qtype_iiitbxmlvalidator_question extends question_graded_by_strategy
         if ($this->is_gradable_response($response)) {
             return '';
         }
-        return get_string('pleaseenterananswer', 'qtype_iiitbxmlvalidator');
+        return get_string('pleaseenterananswer', 'qtype_xmlvalidator');
     }
 
     public function is_same_response(array $prevresponse, array $newresponse) {
@@ -64,7 +64,7 @@ class qtype_iiitbxmlvalidator_question extends question_graded_by_strategy
 
 //        return self::compare_string_with_wildcard(
 //                $response['answer'], $answer->answer, !$this->usecase);
-        $eval = new evaluation();
+        $eval = new evaluation_xmlvalidator();
         $result = $eval->evaluate_response($response['answer'], $answer->answer);
         return $result;
 

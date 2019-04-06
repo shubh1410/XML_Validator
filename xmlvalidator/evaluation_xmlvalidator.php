@@ -10,7 +10,7 @@
  *
  * @author root
  */
-class evaluation {
+class evaluation_xmlvalidator {
 
     //put your code here
 

@@ -2,10 +2,10 @@
 
 
 /**
- * iiitbxmlvalidator question renderer class.
+ * xmlvalidator question renderer class.
  *
  * @package    qtype
- * @subpackage iiitbxmlvalidator
+ * @subpackage xmlvalidator
  */
 
 
@@ -13,9 +13,9 @@ defined('MOODLE_INTERNAL') || die();
 
 
 /**
- * Generates the output for iiitbxmlvalidator questions.
+ * Generates the output for xmlvalidator questions.
 */
-class qtype_iiitbxmlvalidator_renderer extends qtype_renderer {
+class qtype_xmlvalidator_renderer extends qtype_renderer {
     public function formulation_and_controls(question_attempt $qa,
             question_display_options $options) {
 
@@ -69,7 +69,7 @@ class qtype_iiitbxmlvalidator_renderer extends qtype_renderer {
 
         if (!$placeholder) {
             $result .= html_writer::start_tag('div', array('class' => 'ablock'));
-            $result .= get_string('answer', 'qtype_iiitbxmlvalidator',
+            $result .= get_string('answer', 'qtype_xmlvalidator',
                     html_writer::tag('div', $input, array('class' => 'answer')));
             $result .= html_writer::end_tag('div');
         }
@@ -103,7 +103,7 @@ class qtype_iiitbxmlvalidator_renderer extends qtype_renderer {
             return '';
         }
 
-        return get_string('correctansweris', 'qtype_iiitbxmlvalidator',
+        return get_string('correctansweris', 'qtype_xmlvalidator',
                 s($question->clean_response($answer->answer)));
     }
 }

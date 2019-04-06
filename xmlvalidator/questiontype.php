@@ -2,10 +2,10 @@
 
 
 /**
- * Question type class for the iiitbxmlvalidator question type.
+ * Question type class for the xmlvalidator question type.
  *
  * @package    qtype
- * @subpackage iiitbxmlvalidator
+ * @subpackage xmlvalidator
   */
 
 
@@ -13,17 +13,17 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/questionlib.php');
 require_once($CFG->dirroot . '/question/engine/lib.php');
-require_once($CFG->dirroot . '/question/type/iiitbxmlvalidator/question.php');
+require_once($CFG->dirroot . '/question/type/xmlvalidator/question.php');
 
 
 /**
- * The iiitbxmlvalidator question type.
+ * The xmlvalidator question type.
  *
  */
-class qtype_iiitbxmlvalidator extends question_type {
+class qtype_xmlvalidator extends question_type {
     public function extra_question_fields() {
 
-        return array('question_iiitbxmlvalidator', 'answers', 'usecase');
+        return array('question_xmlvalidator', 'answers', 'usecase');
 
     }
 

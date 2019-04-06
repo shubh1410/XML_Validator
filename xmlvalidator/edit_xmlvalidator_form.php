@@ -2,10 +2,10 @@
 
 
 /**
- * Defines the editing form for the iiitbxmlvalidator question type.
+ * Defines the editing form for the xmlvalidator question type.
  *
  * @package    qtype
- * @subpackage iiitbxmlvalidator
+ * @subpackage xmlvalidator
   */
 
 
@@ -13,30 +13,30 @@ defined('MOODLE_INTERNAL') || die();
 
 
 /**
- * iiitbxmlvalidator question editing form definition.
+ * xmlvalidator question editing form definition.
  *
   */
-class qtype_iiitbxmlvalidator_edit_form extends question_edit_form {
+class qtype_xmlvalidator_edit_form extends question_edit_form {
 
     protected function definition_inner($mform) {
 
 
         $menu = array(
-            get_string('caseno', 'qtype_iiitbxmlvalidator'),
-            get_string('caseyes', 'qtype_iiitbxmlvalidator')
+            get_string('caseno', 'qtype_xmlvalidator'),
+            get_string('caseyes', 'qtype_xmlvalidator')
         );
 
         $mform->addElement('select', 'usecase',
-                get_string('casesensitive', 'qtype_iiitbxmlvalidator'), $menu);
+                get_string('casesensitive', 'qtype_xmlvalidator'), $menu);
 
         //$mform->addElement('static', 'answersinstruct',
-              //  get_string('correctanswers', 'qtype_iiitbxmlvalidator'),
-              //  get_string('filloutoneanswer', 'qtype_iiitbxmlvalidator'));
+              //  get_string('correctanswers', 'qtype_xmlvalidator'),
+              //  get_string('filloutoneanswer', 'qtype_xmlvalidator'));
 
 
         $mform->closeHeaderBefore('answersinstruct');
 
-        $this->add_per_answer_fields($mform,'XSD_File : ' ,//get_string('answerno', 'qtype_iiitbxmlvalidator', '{no}'),
+        $this->add_per_answer_fields($mform,'XSD_File : ' ,//get_string('answerno', 'qtype_xmlvalidator', '{no}'),
                 question_bank::fraction_options(),1,1);
 
         $this->add_interactive_settings();
@@ -64,12 +64,12 @@ class qtype_iiitbxmlvalidator_edit_form extends question_edit_form {
                 }
             } else if ($data['fraction'][$key] != 0 ||
                     !html_is_blank($data['feedback'][$key]['text'])) {
-                $errors["answer[$key]"] = get_string('answermustbegiven', 'qtype_iiitbxmlvalidator');
+                $errors["answer[$key]"] = get_string('answermustbegiven', 'qtype_xmlvalidator');
                 $answercount++;
             }
         }
         if ($answercount==0) {
-            $errors['answer[0]'] = get_string('notenoughanswers', 'qtype_iiitbxmlvalidator', 1);
+            $errors['answer[0]'] = get_string('notenoughanswers', 'qtype_xmlvalidator', 1);
         }
         if ($maxgrade == false) {
             $errors['fraction[0]'] = get_string('fractionsnomax', 'question');
@@ -78,6 +78,6 @@ class qtype_iiitbxmlvalidator_edit_form extends question_edit_form {
     }
 
     public function qtype() {
-        return 'iiitbxmlvalidator';
+        return 'xmlvalidator';
     }
 }

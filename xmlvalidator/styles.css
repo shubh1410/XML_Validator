@@ -1,8 +1,8 @@
-.que.iiitbxmlvalidator .answer {
+.que.xmlvalidator .answer {
     padding: 0.3em;
     width: auto;
     display: inline;
 }
-.que.iiitbxmlvalidator .answer input {
+.que.xmlvalidator .answer input {
     width: 80%;
 }
