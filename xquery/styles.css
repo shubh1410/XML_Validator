@@ -1,0 +1,8 @@
+.que.xquery .answer {
+    padding: 0.3em;
+    width: auto;
+    display: inline;
+}
+.que.xquery .answer input {
+    width: 80%;
+}
