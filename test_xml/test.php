@@ -9,7 +9,7 @@
 if($doc)
 {echo "doc loaded\n";}*/
 $dbname=<<<XML
-	
+
 
 <bookstore>
 
@@ -58,7 +58,9 @@ $sxe = simplexml_load_string($dbname);
   $dom_sxe = $dom->appendChild($dom_sxe);
   $dom->saveXML();
   $xpath = new DOMXPath($dom);
-  $query = '/bookstore/book/title';
+  $query = 'for $x in /bookstore/book
+where $x/price>30
+return $x/title';
 $query1 = '/bookstore/book';
 
 
