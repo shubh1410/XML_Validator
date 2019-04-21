@@ -58,10 +58,15 @@ $sxe = simplexml_load_string($dbname);
   $dom_sxe = $dom->appendChild($dom_sxe);
   $dom->saveXML();
   $xpath = new DOMXPath($dom);
+<<<<<<< HEAD
   $query = 'for $x in /bookstore/book
 where $x/price>30
 return $x/title';
 $query1 = '/bookstore/book';
+=======
+  $query = '/bookstore/book[price<30]';
+$query1 = '/bookstore/book[price<30]';
+>>>>>>> edb421923c3137e72db52b682744bb68e4ee1f12
 
 
 $entries = $xpath->query($query);
@@ -70,11 +75,12 @@ $ans="";
 $res="";
 foreach ($entries as $entry) {
     $ans.=$entry->nodeValue;
-	//echo $entry;
+	echo $entry->nodeValue;
 }
+echo "\n";
 foreach ($entries1 as $entry) {
     $res.=$entry->nodeValue;
-	//echo $entry;
+	echo $entry->nodeValue;
 }
 if($ans==$res){
 	echo "Correct answer";
