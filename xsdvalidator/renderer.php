@@ -39,11 +39,11 @@ class qtype_xsdvalidator_renderer extends qtype_with_combined_feedback_renderer 
         $question      = $qa->get_question();
         $currentanswer = $qa->get_last_qt_var('answer');
         $inputname     = $qa->get_qt_field_name('answer');
-        if ($currentanswer) {
-            $expression = $question->parse_expression($currentanswer);
-        } else {
-            $expression = new pmatch_expression('');
-        }
+        //if ($currentanswer) {
+            $expression = $currentanswer;
+        // } else {
+        //     $expression = new pmatch_expression('');
+        // }
 
         // Question text.
         $result = html_writer::tag('div', $question->format_questiontext($qa), array('class' => 'qtext'));

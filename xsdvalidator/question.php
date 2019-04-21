@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot . '/question/type/pmatch/pmatchlib.php');
+//require_once($CFG->dirroot . '/question/type/pmatch/pmatchlib.php');
 
 /**
  * Represents a xsdvalidator question.
@@ -139,9 +139,9 @@ class qtype_xsdvalidator_question extends question_graded_automatically_with_cou
      * @param string $currentanswer a response.
      * @return pmatch_expression the equivalent parsed expression.
      */
-    public function parse_expression($currentanswer) {
-        return $currentanswer;
-    }
+    // public function parse_expression($currentanswer) {
+    //     return $currentanswer;
+    // }
 
     /**
      * @param string $sentence a response.

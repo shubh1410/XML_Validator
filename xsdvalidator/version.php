@@ -30,8 +30,8 @@ $plugin->component = 'qtype_xsdvalidator';
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->release   = 'v1.4 for Moodle 3.4+';
 
-$plugin->dependencies = array(
-    'qtype_pmatch' => 2018111900,
-);
+// $plugin->dependencies = array(
+//     'qtype_pmatch' => 2018111900,
+// );
 
 $plugin->outestssufficient = true;
