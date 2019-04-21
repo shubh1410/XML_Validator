@@ -58,8 +58,8 @@ $sxe = simplexml_load_string($dbname);
   $dom_sxe = $dom->appendChild($dom_sxe);
   $dom->saveXML();
   $xpath = new DOMXPath($dom);
-  $query = '/bookstore/book/title';
-$query1 = '/bookstore/book';
+  $query = '/bookstore/book[price<30]';
+$query1 = '/bookstore/book[price<30]';
 
 
 $entries = $xpath->query($query);
@@ -68,11 +68,12 @@ $ans="";
 $res="";
 foreach ($entries as $entry) {
     $ans.=$entry->nodeValue;
-	//echo $entry;
+	echo $entry->nodeValue;
 }
+echo "\n";
 foreach ($entries1 as $entry) {
     $res.=$entry->nodeValue;
-	//echo $entry;
+	echo $entry->nodeValue;
 }
 if($ans==$res){
 	echo "Correct answer";
