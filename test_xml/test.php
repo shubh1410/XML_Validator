@@ -8,6 +8,7 @@
 /*$doc->load('books.xml');
 if($doc)
 {echo "doc loaded\n";}*/
+/*
 $dbname=<<<XML
 
 
@@ -58,15 +59,10 @@ $sxe = simplexml_load_string($dbname);
   $dom_sxe = $dom->appendChild($dom_sxe);
   $dom->saveXML();
   $xpath = new DOMXPath($dom);
-<<<<<<< HEAD
   $query = 'for $x in /bookstore/book
 where $x/price>30
 return $x/title';
 $query1 = '/bookstore/book';
-=======
-  $query = '/bookstore/book[price<30]';
-$query1 = '/bookstore/book[price<30]';
->>>>>>> edb421923c3137e72db52b682744bb68e4ee1f12
 
 
 $entries = $xpath->query($query);
@@ -87,6 +83,8 @@ if($ans==$res){
 }
 else{
 echo "wrong answer";
-}
-
+}*/
+//exec("javac XQueryTester.java", $output);
+exec("java -cp .:\* XQueryTester", $output);
+echo "string".$output[0];
 ?>
