@@ -13,11 +13,11 @@ class evaluation_xquery {
 
     //put your code here
 
-    public function evaluate_response($response, $answer, $dbname) {
+    public function evaluate_response($response, $answer, $xml_file) {
 
 
       try{
-      $sxe = simplexml_load_string($dbname);
+      $sxe = simplexml_load_string($answer);
         if (!$sxe) {
          return 0;
         }
@@ -29,7 +29,7 @@ class evaluation_xquery {
         $xpath = new DOMXPath($dom);
 
 
-        $query_ans = $answer;
+        $query_ans = $xml_file;
         $query_res = $response;
 
 

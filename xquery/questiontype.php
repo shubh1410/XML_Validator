@@ -22,8 +22,8 @@ require_once($CFG->dirroot . '/question/type/xquery/question.php');
  */
 class qtype_xquery extends question_type {
     public function extra_question_fields() {
-        //added field dbname here
-        return array('question_xquery', 'answers', 'usecase','dbname');
+
+        return array('question_xquery', 'answers', 'usecase','xml_file');
 
     }
 

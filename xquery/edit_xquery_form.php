@@ -20,7 +20,10 @@ class qtype_xquery_edit_form extends question_edit_form {
 
     protected function definition_inner($mform) {
 
-        $mform->addElement('text','dbname','dbname');
+
+
+
+
         $menu = array(
             get_string('caseno', 'qtype_xquery'),
             get_string('caseyes', 'qtype_xquery')
@@ -29,14 +32,16 @@ class qtype_xquery_edit_form extends question_edit_form {
         $mform->addElement('select', 'usecase',
                 get_string('casesensitive', 'qtype_xquery'), $menu);
 
-        $mform->addElement('static', 'answersinstruct',
-                get_string('correctanswers', 'qtype_xquery'),
-                get_string('filloutoneanswer', 'qtype_xquery'));
+        $mform->addElement('text', 'xml_file',
+                        'xQuery');
+        //$mform->addElement('static', 'answersinstruct',
+              //  get_string('correctanswers', 'qtype_xquery'),
+              //  get_string('filloutoneanswer', 'qtype_xquery'));
 
 
         $mform->closeHeaderBefore('answersinstruct');
 
-        $this->add_per_answer_fields($mform, get_string('answerno', 'qtype_xquery', '{no}'),
+        $this->add_per_answer_fields($mform,'XML_File : ' ,//get_string('answerno', 'qtype_xquery', '{no}'),
                 question_bank::fraction_options(),1,1);
 
         $this->add_interactive_settings();
@@ -52,6 +57,7 @@ class qtype_xquery_edit_form extends question_edit_form {
 
     public function validation($data, $files) {
         $errors = parent::validation($data, $files);
+        $xml_files=$data['xml_flie'];
         $answers = $data['answer'];
         $answercount = 0;
         $maxgrade = false;

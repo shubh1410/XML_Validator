@@ -9,7 +9,7 @@
 
 
 defined('MOODLE_INTERNAL') || die();
-include_once 'execute.php';
+include_once 'evaluation_xquery.php';
 
 /**
  * Represents a xquery question.
@@ -18,8 +18,8 @@ class qtype_xquery_question extends question_graded_by_strategy
         implements question_response_answer_comparer {
     /** @var boolean whether answers should be graded case-sensitively. */
     public $usecase;
+    public $xml_files=array();
 
-    public $dbname;
     /** @var array of question_answer. */
     public $answers = array();
 
@@ -65,7 +65,7 @@ class qtype_xquery_question extends question_graded_by_strategy
 //        return self::compare_string_with_wildcard(
 //                $response['answer'], $answer->answer, !$this->usecase);
         $eval = new evaluation_xquery();
-        $result = $eval->evaluate_response($response['answer'], $answer->answer, $this->dbname);
+        $result = $eval->evaluate_response($response['answer'], $answer->answer,$this->xml_file);
         return $result;
 
 
