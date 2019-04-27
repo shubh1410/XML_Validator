@@ -9,7 +9,7 @@
  *
  * @author root
  */
-class evaluation_xquery {
+class evaluation_xpath {
 
     //put your code here
 

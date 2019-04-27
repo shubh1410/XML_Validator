@@ -5,7 +5,7 @@
  * Serve question type files
  *
  * @since      2.0
- * @package    qtype_xquery
+ * @package    qtype_xpath
  */
 
 
@@ -13,8 +13,8 @@ defined('MOODLE_INTERNAL') || die();
 
 
 /**
- * Checks file access for xquery questions.
- * @package  qtype_xquery
+ * Checks file access for xpath questions.
+ * @package  qtype_xpath
  * @category files
  * @param stdClass $course course object
  * @param stdClass $cm course module object
@@ -25,8 +25,8 @@ defined('MOODLE_INTERNAL') || die();
  * @param array $options additional options affecting the file serving
  * @return bool
  */
-function qtype_xquery_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options=array()) {
+function qtype_xpath_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options=array()) {
     global $DB, $CFG;
     require_once($CFG->libdir . '/questionlib.php');
-    question_pluginfile($course, $context, 'qtype_xquery', $filearea, $args, $forcedownload, $options);
+    question_pluginfile($course, $context, 'qtype_xpath', $filearea, $args, $forcedownload, $options);
 }

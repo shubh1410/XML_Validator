@@ -2,10 +2,10 @@
 
 
 /**
- * Defines the editing form for the xquery question type.
+ * Defines the editing form for the xmlwellform question type.
  *
  * @package    qtype
- * @subpackage xquery
+ * @subpackage xmlwellform
   */
 
 
@@ -13,35 +13,30 @@ defined('MOODLE_INTERNAL') || die();
 
 
 /**
- * xquery question editing form definition.
+ * xmlwellform question editing form definition.
  *
   */
-class qtype_xquery_edit_form extends question_edit_form {
+class qtype_xmlwellform_edit_form extends question_edit_form {
 
     protected function definition_inner($mform) {
 
 
-
-
-
         $menu = array(
-            get_string('caseno', 'qtype_xquery'),
-            get_string('caseyes', 'qtype_xquery')
+            get_string('caseno', 'qtype_xmlwellform'),
+            get_string('caseyes', 'qtype_xmlwellform')
         );
 
         $mform->addElement('select', 'usecase',
-                get_string('casesensitive', 'qtype_xquery'), $menu);
+                get_string('casesensitive', 'qtype_xmlwellform'), $menu);
 
-        $mform->addElement('text', 'xml_file',
-                        'xQuery');
         //$mform->addElement('static', 'answersinstruct',
-              //  get_string('correctanswers', 'qtype_xquery'),
-              //  get_string('filloutoneanswer', 'qtype_xquery'));
+              //  get_string('correctanswers', 'qtype_xmlwellform'),
+              //  get_string('filloutoneanswer', 'qtype_xmlwellform'));
 
 
         $mform->closeHeaderBefore('answersinstruct');
 
-        $this->add_per_answer_fields($mform,'XML_File : ' ,//get_string('answerno', 'qtype_xquery', '{no}'),
+        $this->add_per_answer_fields($mform,"Answer ",//get_string('answerno', 'qtype_xmlwellform', '{no}'),
                 question_bank::fraction_options(),1,1);
 
         $this->add_interactive_settings();
@@ -57,12 +52,15 @@ class qtype_xquery_edit_form extends question_edit_form {
 
     public function validation($data, $files) {
         $errors = parent::validation($data, $files);
-        $xml_files=$data['xml_flie'];
         $answers = $data['answer'];
         $answercount = 0;
         $maxgrade = false;
         foreach ($answers as $key => $answer) {
             $trimmedanswer = trim($answer);
+            if ($trimmedanswer == '')
+            {
+              $trimmedanswer = trim("~");
+            }
             if ($trimmedanswer !== '') {
                 $answercount++;
                 if ($data['fraction'][$key] == 1) {
@@ -70,12 +68,12 @@ class qtype_xquery_edit_form extends question_edit_form {
                 }
             } else if ($data['fraction'][$key] != 0 ||
                     !html_is_blank($data['feedback'][$key]['text'])) {
-                $errors["answer[$key]"] = get_string('answermustbegiven', 'qtype_xquery');
+                $errors["answer[$key]"] = get_string('answermustbegiven', 'qtype_xmlwellform');
                 $answercount++;
             }
         }
         if ($answercount==0) {
-            $errors['answer[0]'] = get_string('notenoughanswers', 'qtype_xquery', 1);
+            $errors['answer[0]'] = get_string('notenoughanswers', 'qtype_xmlwellform', 1);
         }
         if ($maxgrade == false) {
             $errors['fraction[0]'] = get_string('fractionsnomax', 'question');
@@ -84,6 +82,6 @@ class qtype_xquery_edit_form extends question_edit_form {
     }
 
     public function qtype() {
-        return 'xquery';
+        return 'xmlwellform';
     }
 }

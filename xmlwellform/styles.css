@@ -1,8 +1,8 @@
-.que.xquery .answer {
+.que.xmlwellform .answer {
     padding: 0.3em;
     width: auto;
     display: inline;
 }
-.que.xquery .answer input {
+.que.xmlwellform .answer input {
     width: 80%;
 }

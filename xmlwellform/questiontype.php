@@ -2,10 +2,10 @@
 
 
 /**
- * Question type class for the xquery question type.
+ * Question type class for the xmlwellform question type.
  *
  * @package    qtype
- * @subpackage xquery
+ * @subpackage xmlwellform
   */
 
 
@@ -13,17 +13,17 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/questionlib.php');
 require_once($CFG->dirroot . '/question/engine/lib.php');
-require_once($CFG->dirroot . '/question/type/xquery/question.php');
+require_once($CFG->dirroot . '/question/type/xmlwellform/question.php');
 
 
 /**
- * The xquery question type.
+ * The xmlwellform question type.
  *
  */
-class qtype_xquery extends question_type {
+class qtype_xmlwellform extends question_type {
     public function extra_question_fields() {
 
-        return array('question_xquery', 'answers', 'usecase','xml_file');
+        return array('question_xmlwellform', 'answers', 'usecase');
 
     }
 

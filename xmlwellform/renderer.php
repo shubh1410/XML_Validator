@@ -2,10 +2,10 @@
 
 
 /**
- * xquery question renderer class.
+ * xmlwellform question renderer class.
  *
  * @package    qtype
- * @subpackage xquery
+ * @subpackage xmlwellform
  */
 
 
@@ -13,9 +13,9 @@ defined('MOODLE_INTERNAL') || die();
 
 
 /**
- * Generates the output for xquery questions.
+ * Generates the output for xmlwellform questions.
 */
-class qtype_xquery_renderer extends qtype_renderer {
+class qtype_xmlwellform_renderer extends qtype_renderer {
     public function formulation_and_controls(question_attempt $qa,
             question_display_options $options) {
 
@@ -69,7 +69,7 @@ class qtype_xquery_renderer extends qtype_renderer {
 
         if (!$placeholder) {
             $result .= html_writer::start_tag('div', array('class' => 'ablock'));
-            $result .= get_string('answer', 'qtype_xquery',
+            $result .= get_string('answer', 'qtype_xmlwellform',
                     html_writer::tag('div', $input, array('class' => 'answer')));
             $result .= html_writer::end_tag('div');
         }
@@ -103,7 +103,7 @@ class qtype_xquery_renderer extends qtype_renderer {
             return '';
         }
 
-        return get_string('correctansweris', 'qtype_xquery',
+        return get_string('correctansweris', 'qtype_xmlwellform',
                 s($question->clean_response($answer->answer)));
     }
 }

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * xquery question definition class.
+ * xpath question definition class.
  *
  * @package    qtype
- * @subpackage xquery
+ * @subpackage xpath
  */
 
 
 defined('MOODLE_INTERNAL') || die();
-include_once 'evaluation_xquery.php';
+include_once 'evaluation_xpath.php';
 
 /**
- * Represents a xquery question.
+ * Represents a xpath question.
  */
-class qtype_xquery_question extends question_graded_by_strategy
+class qtype_xpath_question extends question_graded_by_strategy
         implements question_response_answer_comparer {
     /** @var boolean whether answers should be graded case-sensitively. */
     public $usecase;
@@ -48,7 +48,7 @@ class qtype_xquery_question extends question_graded_by_strategy
         if ($this->is_gradable_response($response)) {
             return '';
         }
-        return get_string('pleaseenterananswer', 'qtype_xquery');
+        return get_string('pleaseenterananswer', 'qtype_xpath');
     }
 
     public function is_same_response(array $prevresponse, array $newresponse) {
@@ -64,7 +64,7 @@ class qtype_xquery_question extends question_graded_by_strategy
 
 //        return self::compare_string_with_wildcard(
 //                $response['answer'], $answer->answer, !$this->usecase);
-        $eval = new evaluation_xquery();
+        $eval = new evaluation_xpath();
         $result = $eval->evaluate_response($response['answer'], $answer->answer,$this->xml_file);
         return $result;
 

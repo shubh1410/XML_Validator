@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<XMLDB PATH="question/type/xquery/db" VERSION="20120122" COMMENT="XMLDB file for Moodle question/type/xquery"
+<XMLDB PATH="question/type/xpath/db" VERSION="20120122" COMMENT="XMLDB file for Moodle question/type/xpath"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../../lib/xmldb/xmldb.xsd"
 >
   <TABLES>
-    <TABLE NAME="question_xquery" COMMENT="Options for xquery questions">
+    <TABLE NAME="question_xpath" COMMENT="Options for xpath questions">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="question"/>
         <FIELD NAME="question" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Foreign key references question.id." PREVIOUS="id" NEXT="answers"/>
