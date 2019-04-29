@@ -9,3 +9,5 @@ XML RELATED PLUGINS FOR MOODLE
 4. xpath: Evaluates xpath expression of both, teacher and students against xml given by teacher and grades accordingly.
 
 All folders contain their installation manual and how to create question documentation.
+
+test_xml contains test files which can be used to test the plugins.
